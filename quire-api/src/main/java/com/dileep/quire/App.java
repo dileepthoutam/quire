@@ -1,13 +1,13 @@
-package com.dileep.quire_api;
+package com.dileep.quire;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuireApiApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuireApiApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }

@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Issue, { IssueType, BugStatus, BugPriority } from './components/Issue/Issue';
 
-function App() {
-  const [count, setCount] = useState(0)
+const queryClient = new QueryClient();
+
+const App: React.FC = () => {
+  const issue = {
+    id: 'QUIRE-1',
+    issueType: IssueType.BUG,
+    title: 'Fix button alignment',
+    description: 'The button on the main page is not aligned correctly.',
+    bugStatus: BugStatus.OPEN,
+    bugPriority: BugPriority.HIGH,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    assignedTo: 'John Doe',
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <QueryClientProvider client={queryClient}>
+      <div className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-4">Issues</h1>
+        <Issue {...issue} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </QueryClientProvider>
+  );
+};
 
-export default App
+export default App;

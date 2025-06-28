@@ -1,10 +1,10 @@
-package com.dileep.quire_api;
+package com.dileep.quire;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuireApiApplicationTests {
+class AppTests {
 
 	@Test
 	void contextLoads() {
