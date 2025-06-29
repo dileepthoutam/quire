@@ -6,3 +6,5 @@ remove everything and create a new component called Issue for a bug tracking sys
 must contain issue type (can be bug, feature, task), who it is assigned to, reporter,
 title, description, status(can be OPEN, IN_PROGRESS, CLOSED), priority (SL1 to SL4),
 make it a minimal design, use tailwind,
+
+3. Lot of additional prompts to adjust small things, about 10 more prompts. Can't really log those here.

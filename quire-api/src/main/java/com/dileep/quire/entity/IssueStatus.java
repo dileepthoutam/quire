@@ -1,6 +1,6 @@
 package com.dileep.quire.entity;
 
-public enum BugStatus {
+public enum IssueStatus {
     OPEN,
     IN_PROGRESS,
     CLOSED,

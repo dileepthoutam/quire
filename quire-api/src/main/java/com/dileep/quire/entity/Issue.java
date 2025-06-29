@@ -10,17 +10,18 @@ public class Issue {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String issueType;
+    @Enumerated(EnumType.STRING)
+    private IssueType issueType;
 
     private String title;
 
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private BugStatus status;
+    private IssueStatus status;
 
     @Enumerated(EnumType.STRING)
-    private BugPriority priority;
+    private IssuePriority priority;
 
     private LocalDateTime createDate;
 
@@ -32,7 +33,7 @@ public class Issue {
 
     public Issue() {}
 
-    public Issue(String issueType, String title, String description, BugStatus status, BugPriority priority, User assignedUser) {
+    public Issue(IssueType issueType, String title, String description, IssueStatus status, IssuePriority priority, User assignedUser) {
         this.issueType = issueType;
         this.title = title;
         this.description = description;
@@ -41,7 +42,7 @@ public class Issue {
         this.assignedUser = assignedUser;
     }
 
-    public String getIssueType() {
+    public IssueType getIssueType() {
         return issueType;
     }
 
@@ -57,11 +58,11 @@ public class Issue {
         return description;
     }
 
-    public BugStatus getStatus() {
+    public IssueStatus getStatus() {
         return status;
     }
 
-    public BugPriority getPriority() {
+    public IssuePriority getPriority() {
         return priority;
     }
 
@@ -77,7 +78,7 @@ public class Issue {
         return assignedUser;
     }
 
-    public void setIssueType(String issueType) {
+    public void setIssueType(IssueType issueType) {
         this.issueType = issueType;
     }
 
@@ -89,11 +90,11 @@ public class Issue {
         this.description = description;
     }
 
-    public void setStatus(BugStatus status) {
+    public void setStatus(IssueStatus status) {
         this.status = status;
     }
 
-    public void setPriority(BugPriority priority) {
+    public void setPriority(IssuePriority priority) {
         this.priority = priority;
     }
 
